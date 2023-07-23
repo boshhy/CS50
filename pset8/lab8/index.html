@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function listen()
+            {
+                let correct = document.querySelector(".correct");
+                let incorrect = document.querySelectorAll(".incorrect");
+                let check2 = document.querySelector("#check2");
+                let answer = document.querySelector("#answer2");
+
+                correct.addEventListener("click", function()
+                {
+                    correct.style.backgroundColor = "#00ff00";
+                    document.querySelector(".response1").innerHTML = "Correct!";
+                });
+
+                for (let i = 0; i < incorrect.length; i++){
+                incorrect[i].addEventListener("click", function()
+                {
+                    incorrect[i].style.backgroundColor = "#ff0000";
+                    document.querySelector(".response1").innerHTML = "Incorrect";
+                })};
+
+                check2.addEventListener("click", function()
+                {
+                    if (answer2.value == "Ephran" || answer2.value == "ephran")
+                    {
+                        answer2.style.backgroundColor = "#00ff00";
+                        document.querySelector(".response2").innerHTML = "Correct!";
+                    }
+                    else
+                    {
+                        answer2.style.backgroundColor = "#ff0000";
+                        document.querySelector(".response2").innerHTML = "Incorrect";
+                    }
+                })
+
+            }
+
+            document.addEventListener("DOMContentLoaded", listen);
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many legs does a spider have?</h3>
+                <button class="incorrect">six</button>
+                <button class="incorrect">seven</button>
+                <button class="correct">eight</button>
+                <button class="incorrect">nine</button>
+                <p class="response1"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>What is the first name of Natalie's kid?</h3>
+
+                    <input id ="answer2" type="text"/><button id ="check2">submit</button>
+
+                    <p class="response2"></p>
+            </div>
+
+        </div>
+    </body>
+</html>

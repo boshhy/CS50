@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<h2>Stocks</h2><br>
+    <table class="table table-striped">
+        <thead>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.amount }}</td>
+                    <td>{{ stock.price  | usd }}</td>
+                    <td>{{ (stock.amount * stock.price) | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ user[0].cash | usd}}</td>
+            </tr>
+              <tfoot>
+                <td colspan="4"></td>
+                <td><b>{{ total | usd}}</b></td>
+              </tfoot>
+        </tbody>
+    </table>
+{% endblock %}

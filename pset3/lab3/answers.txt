@@ -1,0 +1,17 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+When given a sorted list. sort1 out performs sort3.
+but when given a random list sort2 outperforms sort1.
+
+sort2 uses: Merge Sort
+
+How do you know?:
+When given a large randomized list, sort2 outperforms sort1
+and sort3.
+
+sort3 uses: Selection Sort
+
+How do you know?:
+When given a sorted list. sort3 was slower then sort1 and sort2.
+
